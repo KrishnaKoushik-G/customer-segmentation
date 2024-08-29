@@ -37,12 +37,15 @@ Exploratory Data Analysis (EDA) serves as a fundamental step in the data analysi
 One essential aspect of EDA is summary statistics, which provide a concise overview of the dataset's central tendency, dispersion, and shape. Measures such as mean, median, and standard deviation offer insights into the dataset's distribution and variability, while quantiles and percentiles reveal its spread and skewness. It helps in understanding the overall characteristics of the data and identify potential outliers or anomalies that may warrant further investigation.
 
 ![](img/1.png)
+
 Figure 1 Head of the transactional dataframe 
 
 ![](img/2.png)
+
 Figure 2 Descriptive statistics of Numerical columns 
 
 ![](img/3.png)
+
 Figure 3 Descriptive statistics of Categorical columns 
 
 From the summary statistics we observe that the average quantity of products per transaction stands at approximately 9.55, suggesting that customers typically purchase multiple items in a single transaction. However, the wide range of quantity values, spanning from -80995 to 80995, indicates the presence of returned or cancelled orders, necessitating appropriate handling to ensure data accuracy and integrity. The substantial standard deviation underscores the significant spread in the data, indicative of the presence of outliers that warrant further investigation and treatment. Similarly, the average unit price of products is approximately 4.61, with a wide range extending from -11062.06 to 38970. The presence of negative prices is anomalous. The CustomerID column exhibits 406829 non-null entries, signifying the presence of missing values that require attention.
@@ -55,8 +58,11 @@ Visualization techniques play a crucial role in EDA, enabling researchers to exp
 The following figures are such visualizations created for understanding the Top 20 Most Frequent Stock Codes and the country wise sales distribution. 
 
 ![](img/4.png) 
+
 Figure 4 Top 20 Most Frequent Stock Codes
+
 ![](img/5.png)
+
 Figure 5 Top Countries by Proportion 
 
 #### 2.2.3 Initial Data Cleaning and Preprocessing 
@@ -119,12 +125,14 @@ Once outliers are identified, several strategies can be used to address them:
 A common approach to outlier treatment is capping and flooring, where extreme values are adjusted within set bounds. The interquartile range (IQR) method is particularly robust, using the first and third quartiles to determine these bounds. Data points falling outside these bounds are adjusted, stabilizing statistical measures and reducing the impact of outliers on subsequent analyses.
 
 ![](img/6.png)
+
 Figure 6: Boxplot before Outlier Treatment
 
 The process involves examining each numeric variable, adjusting data points that fall outside the determined bounds. This reduces the influence of outliers on statistical measures like the mean and standard deviation, ensuring that analyses accurately reflect the data's underlying patterns. It also improves the robustness of machine learning models, preventing overfitting and leading to better generalization on new data.
 Outlier treatment enhances the interpretability of results by eliminating distortions caused by extreme values, allowing for clearer analysis of relationships between variables.
 
 ![](img/7.png)
+
 Figure 7: Boxplot after Outlier Treatment
 
 In summary, outlier treatment is a crucial preprocessing step that involves identifying and adjusting extreme values using methods like the IQR. This ensures the reliability, stability, and interpretability of analysis results, supporting informed decision-making and the development of accurate predictive models.
@@ -137,6 +145,7 @@ In this process, we used correlation matrices, heatmaps, and correlation plots t
 Dimensionality reduction enhances the performance and efficiency of machine learning algorithms, making predictive modeling more accurate and reliable.
 
 ![](img/8.png)
+
 Figure 8 Correlation heatmap of customer_data
 
 By visualizing the correlation matrix as a heatmap, we identified strong correlations between certain columns. Specifically, 'total spend' and 'total products purchased' had a correlation coefficient exceeding 0.8, as did 'cancellation rate' and 'cancellation frequency.' 'Total spend' also correlated highly with 'total transactions.' Due to these high correlations, we removed redundant columns to reduce multicollinearity, opting to keep 'total spend' and 'cancellation rate' for their valuable insights. This reduction enhanced computational efficiency and improved the interpretability of the dataset, allowing for more accurate and robust analysis by focusing on the most relevant features.
@@ -153,6 +162,7 @@ The Elbow Method helps identify the optimal number of clusters by finding the po
 - Identification of Elbow Point: Plot the WCSS against the number of clusters (K) and identify the point where the rate of decrease sharply decelerates, resembling an elbow. 
 
 ![](img/9.png)
+
 Figure 9 Elbow curve 
 
 Plotting the elbow curve, we observed a significant decrease in the within-cluster sum of squares (WCSS) as we increased the number of clusters up to a certain point. However, beyond this point, the reduction in WCSS became marginal, indicating that additional clusters did not contribute substantially to explaining the variance within the data. This pivotal point, where the curve exhibited a noticeable flattening, occurred at K = 4. 
@@ -206,6 +216,7 @@ Overall, recommendation systems powered by K-Means customer segmentation enable 
 ### 2.7 Results
 The result dataframe consists of the customer ID, Cluster or segment of the customer, and the stock codes, descriptions of the top 3 products that are recommended to the customer based on the top 10 products in the cluster the person belongs to. The following figure shows the head of the recommendations dataframe. 
 ![](img/10.png)
+
 Figure 10 Head of the recommendations dataframe 
 
 ## 3. Conclusion
