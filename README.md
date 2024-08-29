@@ -52,12 +52,12 @@ Overall, these summary statistics provide a comprehensive overview of the datase
 #### 2.2.2 Visualization 
 
 Visualization techniques play a crucial role in EDA, enabling researchers to explore data through graphical representations that enhance understanding and interpretation. Common visualization tools include histograms, box plots, scatter plots, and density plots, each offering unique insights into different aspects of the data distribution and relationships between variables. Heatmaps and correlation matrices provide visualizations of pairwise relationships between variables, facilitating the identification of patterns and dependencies within the dataset.  
-The following figures are such visualizations created for understanding the frequency distribution of the quantity column and the country wise sales distribution. 
+The following figures are such visualizations created for understanding the Top 20 Most Frequent Stock Codes and the country wise sales distribution. 
 
 ![](img/4.png) 
-Figure 4 Frequency distribution of Quantity column 
+Figure 4 Top 20 Most Frequent Stock Codes
 ![](img/5.png)
-Figure 5 Country wise sales distribution 
+Figure 5 Top Countries by Proportion 
 
 #### 2.2.3 Initial Data Cleaning and Preprocessing 
 EDA also involves steps like initial data cleaning and preprocessing to ensure dataset quality before analysis. This includes handling missing values, outliers, and inconsistencies, as well as transforming variables to meet modeling requirements. Data normalization and standardization may also be applied to improve model performance.
